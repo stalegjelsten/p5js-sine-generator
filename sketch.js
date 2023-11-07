@@ -7,8 +7,6 @@
 // modified.
 // original author: Jiwon Shin (http://jiwonshin.com/)
 
-document.addEventListener("touchstart", {});
-
 // initializing two oscillator objects. Horizontal and vertical
 let oscH;
 let oscV;
@@ -183,16 +181,7 @@ function mouseMoved() {
 // Trying to make the simulation more touch friendly :^)
 function touchMoved() {
   redraw();
-}
-
-function touchStarted() {
-  return false;
-}
-
-function touchMoved() {
-  return false;
-}
-
-function touchEnded() {
-  return false;
+  if (osc.started == false) {
+    osc.play();
+  }
 }
